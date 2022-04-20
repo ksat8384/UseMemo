@@ -1,26 +1,32 @@
-import React, {useState, useMemo} from 'react';
-import {SafeAreaView, StyleSheet, Text, TextInput, Button} from 'react-native';
-import List from './src/components/List';
+import React, { useState, useMemo } from "react";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  Button,
+} from "react-native";
+import List from "./src/components/List";
 
 const users = [
-  {id: 'a', name: 'Batman'},
-  {id: 'b', name: 'Superman'},
-  {id: 'c', name: 'Ironman'},
-  {id: 'd', name: 'Hulk'},
-  {id: 'e', name: 'BlackWidow'},
-  {id: 'f', name: 'Thor'},
-  {id: 'g', name: 'Captain America'},
-  {id: 'h', name: 'Hawkeye'},
-  {id: 'i', name: 'Spiderman'},
-  {id: 'j', name: 'Antman'},
+  { id: "a", name: "Batman" },
+  { id: "b", name: "Superman" },
+  { id: "c", name: "Ironman" },
+  { id: "d", name: "Hulk" },
+  { id: "e", name: "BlackWidow" },
+  { id: "f", name: "Thor" },
+  { id: "g", name: "Captain America" },
+  { id: "h", name: "Hawkeye" },
+  { id: "i", name: "Spiderman" },
+  { id: "j", name: "Antman" },
 ];
 
 const App = () => {
   // console.log('Rendering App... ');
-  const [text, setText] = useState('');
-  const [search, setSearch] = useState('');
+  const [text, setText] = useState("");
+  const [search, setSearch] = useState("");
 
-  const handleText = text => {
+  const handleText = (text) => {
     console.log(text);
     setText(text);
   };
@@ -33,14 +39,17 @@ const App = () => {
   Without useMemo, filter function will run for every key stroke the user types into the 
   input field eventhough filteredUsers only change when the search state changes and not 
   when text state changes.
+
+  Try it yourself: Typing something into the input field shouldn't trigger the logging,
+  but executing the search with the button click will trigger it.
   */
   const filteredUsers = useMemo(
     () =>
-      users.filter(user => {
-        console.log('Filter function is running...');
+      users.filter((user) => {
+        console.log("Filter function is running...");
         return user.name.toLowerCase().includes(search.toLowerCase());
       }),
-    [search],
+    [search]
   );
 
   return (
@@ -65,8 +74,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   input: {
-    backgroundColor: 'white',
-    borderBottomColor: '#000000',
+    backgroundColor: "white",
+    borderBottomColor: "#000000",
     borderBottomWidth: 1,
     marginBottom: 10,
   },

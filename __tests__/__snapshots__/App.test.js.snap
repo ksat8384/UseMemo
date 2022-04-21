@@ -21,6 +21,7 @@ exports[`App Component renders correctly 1`] = `
         "marginBottom": 10,
       }
     }
+    testID="input"
     value=""
   />
   <View
@@ -40,6 +41,7 @@ exports[`App Component renders correctly 1`] = `
         "opacity": 1,
       }
     }
+    testID="search"
   >
     <View
       style={

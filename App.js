@@ -55,13 +55,14 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
+        testID="input"
         style={styles.input}
         placeholder="Enter search term here..."
         value={text}
         onChangeText={handleText}
       />
 
-      <Button title="Search" onPress={handleSearch} />
+      <Button testID="search" title="Search" onPress={handleSearch} />
 
       <List list={filteredUsers} />
     </SafeAreaView>

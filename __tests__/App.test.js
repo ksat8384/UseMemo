@@ -5,8 +5,8 @@ import {
   cleanup,
   fireEvent,
   waitFor,
+  within,
 } from "@testing-library/react-native";
-// import renderer from "react-test-renderer";
 
 describe("App Component", () => {
   let component;
@@ -20,20 +20,32 @@ describe("App Component", () => {
     expect(toJSON()).toMatchSnapshot();
   });
 
-  it("renders input field correctly", async () => {
-    const { findByTestId, findByText, queryByTestId } = component;
+  it("renders input field, button and list correctly", () => {
+    const { findByTestId, findByText } = component;
+
+    const input = findByTestId("input");
+    const search = findByText("Search");
+    const list = findByTestId("flat-list");
+
+    expect(input).toBeTruthy();
+    expect(search).toBeTruthy();
+    expect(list).toBeTruthy();
+  });
+
+  it("renders list based on search correctly", async () => {
+    const { getByTestId } = component;
 
     const mockInputText = "Hulk";
-    const input = findByTestId("input");
-    console.log("input = ", input);
-    fireEvent.changeText(input, mockInputText);
 
-    const search = findByText("Search");
-    console.log("search = ", search);
+    const input = getByTestId("input");
+    const search = getByTestId("search");
+
+    fireEvent.changeText(input, mockInputText);
     fireEvent.press(search);
 
     await waitFor(() => {
-      expect(queryByTestId("flat-list")).toBeTruthy();
+      const list = within(getByTestId("flat-list"));
+      expect(list.getByText("Hulk")).toBeTruthy();
     });
   });
 });

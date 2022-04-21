@@ -5,7 +5,9 @@ import ListItem from "./ListItem";
 const List = ({ list }) => {
   //   console.log('Rendering List... ');
 
-  const renderItem = ({ item }) => <ListItem key={item.id} item={item} />;
+  const renderItem = ({ item }) => (
+    <ListItem testID={`flat-list-item-${item.id}`} key={item.id} item={item} />
+  );
 
   return <FlatList testID="flat-list" data={list} renderItem={renderItem} />;
 };

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650515596043" clover="3.2.0">
-  <project timestamp="1650515596043" name="All files">
-    <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="4" coveredelements="4" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
+<coverage generated="1650520411733" clover="3.2.0">
+  <project timestamp="1650520411734" name="All files">
+    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2" elements="9" coveredelements="8" complexity="0" loc="6" ncloc="6" packages="1" files="2" classes="2"/>
+    <file name="List.js" path="/Users/Alien/Documents/GitHub/UseMemo/src/components/List.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+    </file>
     <file name="ListItem.js" path="/Users/Alien/Documents/GitHub/UseMemo/src/components/ListItem.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="4" count="1" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>

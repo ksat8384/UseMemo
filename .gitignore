@@ -1,9 +1,50 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+
+# node.js
+#
 node_modules/
-*.js linguist-detectable=true 
-*.css linguist-detectable=false
-*.java linguist-detectable=false
-*.python linguist-detectable=false 
-*.html linguist-detectable=false  
-*.xml linguist-detectable=false 
+npm-debug.log
+yarn-error.log
 
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
 
+# Bundle artifacts
+*.jsbundle
+
+# CocoaPods
+/ios/Pods/
